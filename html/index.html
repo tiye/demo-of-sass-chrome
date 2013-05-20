@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      @SASS Demo
+    </title>
+    <meta charset="utf-8" />
+    <link href="../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <p>
+      content
+    </p><h2 id="demo-of-sass-in-chrome">Demo of SASS in Chrome</h2>
+
+<h3 id="environment">Environment</h3>
+
+<p>first, install <code>sass</code> with Gem, I mean you need to install <code>gem</code> first:</p>
+
+<p><code>
+gem install sass
+</code></p>
+
+<p>also, <code>rb-inotify</code> is required by <code>sass</code> if you want to use <code>--watch</code></p>
+
+<p><code>
+gem install rb-inotify
+</code></p>
+
+<p>Then install <code>gem install slim</code> for quick generating HTML.</p>
+
+<p>Personally I will use my own commad to auto reload pages:<br />
+https://github.com/jiyinyiyong/doodle<br />
+https://github.com/jiyinyiyong/doodle-crx<br />
+There are also tools from Ruby communities, I'll try later.</p>
+
+<p>Create a file structure like:</p>
+
+<p><code>
+➤➤ tree
+.
+|-- css
+|   `-- style.css
+|-- html
+|   `-- index.html
+|-- sass
+|   `-- style.sass
+`-- slim
+    `-- index.slim
+</code></p>
+
+<p>So you can use it to generae HTML</p>
+
+<p><code>
+slimrb -p slim/index.slim &gt; html/index.html
+</code></p>
+
+<p>Things just like Jade and Stylus, who copied from Ruby Community.<br />
+Quick starts of SASS and Slim here:<br />
+http://sass-lang.com/tutorial.html<br />
+http://rdoc.info/gems/slim/frames  </p>
+
+<hr />
+
+  </body>
+</html>

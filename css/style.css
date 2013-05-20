@@ -1,0 +1,11 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\000035}}
+body p {
+  margin: 0px 0px;
+  font-size: 14px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\0000310}}
+body pre code {
+  font-family: Monaco;
+  background: #cccccc;
+  margin: 30px; }
+
+/*@ sourceMappingURL=style.css.map */
