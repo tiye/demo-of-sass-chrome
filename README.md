@@ -3,6 +3,16 @@
 Demo of SASS in Chrome
 ------
 
+Tried like Paul Irish demostrated at Google IO:  
+http://www.youtube.com/watch?v=x6qe_kVaBpg
+
+I put this demo on Github Pages here:  
+http://jiyinyiyong.github.io/demo-of-sass-chrome/html/  
+You may open the debugger > Element to see SASS, if possible...  
+OK,, the page looks really ugly...
+
+A log here:
+
 ### Environment
 
 first, install `sass` with Gem, I mean you need to install `gem` first:
@@ -144,4 +154,6 @@ I mean, who knows why it doesn't generate `.map` every time.
 >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
 ```
 
-"Ctrl + Click" on a propertery goes to the variable, fine.  
+"Ctrl + Click" on a propertery goes to the variable, fine.
+
+Then I try using raw file rather than Nginx, still fail.
