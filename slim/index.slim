@@ -8,8 +8,19 @@ html
   body
     p content
     markdown:
+      
       Demo of SASS in Chrome
       ------
+
+      Tried like Paul Irish demostrated at Google IO:  
+      http://www.youtube.com/watch?v=x6qe_kVaBpg
+
+      I put this demo on Github Pages here:  
+      http://jiyinyiyong.github.io/demo-of-sass-chrome/html/  
+      You may open the debugger > Element to see SASS, if possible...  
+      OK,, the page looks really ugly...
+
+      A log here:
 
       ### Environment
 
@@ -60,3 +71,111 @@ html
 
       ------
 
+      Looks like Chrome 26 supports the experiments quite bad,  
+      trying to upgrade it to `google-chrome-dev` 28
+
+      Here's a guide about workspaces in Chrome:  
+      http://ikarishinjieva.github.io/blog/blog/2013/03/05/chrome-workspace/
+
+      Guides about using SASS in Chrome:  
+      http://bricss.net/post/33788072565/using-sass-source-maps-in-webkit-inspector
+      http://my.umbc.edu/groups/web-dev/news/26213  
+
+      But not enough, one need SASS 3.3.0 to make it work.  
+      http://stackoverflow.com/questions/15940494/sass-support-in-chromer-developer-tools  
+
+      There would be Stylus version in the future:
+      http://stackoverflow.com/questions/9865302/less-sass-debugging-in-chrome-dev-tools-firebug
+
+      After some searches and attempts, I finished installing `3.3.0` :  
+      http://rubygems.org/gems/sass
+
+      ```
+      gem install sass -v=3.3.0.alpha.141
+      ```
+
+      Finally I saw the `--sourcemap` option
+
+      But... Why? It doesn't work...  
+
+      ```
+      ➤➤ uname -a
+      Linux laptop 3.8.11-1-ARCH #1 SMP PREEMPT Wed May 1 20:18:57 CEST 2013 x86_64 GNU/Linux
+      ➤➤ ruby --version
+      ruby 2.0.0p0 (2013-02-24 revision 39474) [x86_64-linux]
+      ➤➤ sass --version
+      Sass 3.3.0.alpha.141 (Bleeding Edge)
+      ➤➤ google-chrome --version
+      Google Chrome 28.0.1500.5 dev
+      ```
+
+      Found that, after I removed my file out of workspace. It begin to work.  
+      And it wolln't work every time I save and reload,  
+      I mean, who knows why it doesn't generate `.map` every time.  
+
+      ```
+      ➤➤ slimrb -p slim/index.slim > html/index.html
+      ➤➤ >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+        overwrite css/style.css.map
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to:
+      .....
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+        overwrite css/style.css.map
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+        overwrite css/style.css
+        overwrite css/style.css.map
+      >>> Change detected to: /opt/s/demo-of-sass-chrome/sass/style.sass
+      ```
+
+      "Ctrl + Click" on a propertery goes to the variable, fine.
+
+      Then I try using raw file rather than Nginx, still fail.
+
+      Updated to `sass-3.3.0.alpha.149.gem`, all seems fine~
+
+      ------
+
+      Some more updates:
+
+      By using CSS SourceMaps, I can edit css and save directly.  
+      Editing SASS will break this solution. The modified SASS is only CSS.  
+      So debugging SASS is not as easy as debugging CSS.  
+      Just like JS, SourceMaps is available, but not for debuggers..
+
+      Slim supports Github Flavored Markdown badly... I don't like it.

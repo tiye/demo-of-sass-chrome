@@ -1,7 +1,16 @@
 
 $font-size: 14px
+$page-padding: 60px
+$link-color: hsl(0,80%,80%)
+$code-bg: hsl(0,80%,90%)
 
 body
+
+  margin: 0px
+  padding: $page-padding
+  font-family: Arial
+  line-height: 30px
+  
   p
     margin: 0px 0px
     font-size: $font-size
@@ -9,6 +18,9 @@ body
   pre
     code
       font-family: Monaco
-      background: hsl(0,0,80)
+      background: $code-bg
       margin: 30px
+  
+  a
+    color: $link-color
       

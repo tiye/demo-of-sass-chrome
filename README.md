@@ -159,3 +159,14 @@ I mean, who knows why it doesn't generate `.map` every time.
 Then I try using raw file rather than Nginx, still fail.
 
 Updated to `sass-3.3.0.alpha.149.gem`, all seems fine~
+
+------
+
+Some more updates:
+
+By using CSS SourceMaps, I can edit css and save directly.  
+Editing SASS will break this solution. The modified SASS is only CSS.  
+So debugging SASS is not as easy as debugging CSS.  
+Just like JS, SourceMaps is available, but not for debuggers..
+
+Slim supports Github Flavored Markdown badly... I don't like it.
