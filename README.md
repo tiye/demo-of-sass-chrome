@@ -157,3 +157,5 @@ I mean, who knows why it doesn't generate `.map` every time.
 "Ctrl + Click" on a propertery goes to the variable, fine.
 
 Then I try using raw file rather than Nginx, still fail.
+
+Updated to `sass-3.3.0.alpha.149.gem`, all seems fine~
