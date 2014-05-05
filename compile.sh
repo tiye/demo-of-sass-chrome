@@ -1,0 +1,1 @@
+sass --sourcemap sass/style.sass css/style.css

@@ -1,20 +1,16 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\000037}}
 body {
   margin: 0px;
   padding: 60px;
   font-family: Arial;
   line-height: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\0000314}}
   body p {
     margin: 0px 0px;
     font-size: 14px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\0000319}}
   body pre code {
     font-family: Monaco;
     background: #fad1d1;
     margin: 30px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/opt\/s\/demo-of-sass-chrome\/sass\/style\.sass}line{font-family:\0000324}}
   body a {
     color: #f5a3a3; }
 
-/*@ sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map */
